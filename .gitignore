@@ -1,12 +1,1 @@
-bin/*
-lib/*
-lib64/*
-include/*
-__pycache__
-share/*
-*.pyc
-node_modules/*
-dev.yaml
-src/settings.py
-*.sh
-src/server_info.py
+node_modules/

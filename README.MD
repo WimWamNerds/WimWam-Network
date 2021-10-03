@@ -1,66 +1,47 @@
-# Anfora
+# Tech Net 👩‍💻
 
-[![CircleCI](https://circleci.com/gh/anforaProject/anfora.svg?style=svg)](https://circleci.com/gh/anforaProject/anfora)
-[![Backers on Open Collective](https://opencollective.com/anfora/backers/badge.svg)](#backers)
- [![Sponsors on Open Collective](https://opencollective.com/anfora/sponsors/badge.svg)](#sponsors) 
+<a href="https://github.com/karishmashuklaa/technet/stargazers"><img src="https://img.shields.io/github/stars/karishmashuklaa/technet" alt="Stars Badge"/></a>
+<a href="https://github.com/karishmashuklaa/technet/network/members"><img src="https://img.shields.io/github/forks/karishmashuklaa/technet" alt="Forks Badge"/></a>
+<a href="https://github.com/karishmashuklaa/technet/issues"><img src="https://img.shields.io/github/issues/karishmashuklaa/technet" alt="Issues Badge"/></a>
+<a href="https://github.com/karishmashuklaa/technet/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/karishmashuklaa/technet?color=2b9348"></a>
 
-## About
+## Description 📝
 
-**Not recommended for non developers. Currently under development**
+Tech Net is a social networking platform for tech enthusiasts. 
+Create profiles, make an impressive portfolio and connect with other techies! 
 
-This projects aims to create a simple to use self-hosted gallery app
-with a minimal footprint in the server.
+## Tech Stack 💻
 
-It is being built upon the following technologies:
+- React
+- Redux (for state management) 
+- Node.js
+- Express
+- MongoDB
 
-* Python 3.6
-* Tornado
-* peewee
+## Features ✨
 
-Also is in the objectives of this project to create a decentralized social
-network to share photos. Similar to instagram with the technology used at mastodon.
+- User authentication
+- User profiles
+- Posts, Like and Comment
+- Showcase GitHub repositories in your profile
 
-## Contributors
+## To Try This On Your Own 🚀
+- Fork the repository
+- Clone the repository
 
-This project exists thanks to all the people who contribute. 
-<a href="https://github.com/anforaProject/anfora/graphs/contributors"><img src="https://opencollective.com/anfora/contributors.svg?width=890&button=false" /></a>
+```bash
+git clone https://github.com/karishmashuklaa/technet.git
+```
+- `npm install` to install dependencies
+- `npm install` in `client` folder to install dependencies
+- `npm run dev` to run the project
 
+## Contributors 💗
 
-## Backers
+Thank you to everyone contributing! ❤️
 
-Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/anfora#backer)]
+<a href="https://github.com/karishmashuklaa/technet/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=karishmashuklaa/technet" />
+</a>
 
-<a href="https://opencollective.com/anfora#backers" target="_blank"><img src="https://opencollective.com/anfora/backers.svg?width=890"></a>
-
-
-## Sponsors
-
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/anfora#sponsor)]
-
-<a href="https://opencollective.com/anfora/sponsor/0/website" target="_blank"><img src="https://opencollective.com/anfora/sponsor/0/avatar.svg"></a>
-<a href="https://opencollective.com/anfora/sponsor/1/website" target="_blank"><img src="https://opencollective.com/anfora/sponsor/1/avatar.svg"></a>
-<a href="https://opencollective.com/anfora/sponsor/2/website" target="_blank"><img src="https://opencollective.com/anfora/sponsor/2/avatar.svg"></a>
-<a href="https://opencollective.com/anfora/sponsor/3/website" target="_blank"><img src="https://opencollective.com/anfora/sponsor/3/avatar.svg"></a>
-<a href="https://opencollective.com/anfora/sponsor/4/website" target="_blank"><img src="https://opencollective.com/anfora/sponsor/4/avatar.svg"></a>
-<a href="https://opencollective.com/anfora/sponsor/5/website" target="_blank"><img src="https://opencollective.com/anfora/sponsor/5/avatar.svg"></a>
-<a href="https://opencollective.com/anfora/sponsor/6/website" target="_blank"><img src="https://opencollective.com/anfora/sponsor/6/avatar.svg"></a>
-<a href="https://opencollective.com/anfora/sponsor/7/website" target="_blank"><img src="https://opencollective.com/anfora/sponsor/7/avatar.svg"></a>
-<a href="https://opencollective.com/anfora/sponsor/8/website" target="_blank"><img src="https://opencollective.com/anfora/sponsor/8/avatar.svg"></a>
-<a href="https://opencollective.com/anfora/sponsor/9/website" target="_blank"><img src="https://opencollective.com/anfora/sponsor/9/avatar.svg"></a>
-
-
-
-## License
-
-Copyright (C) 2018-? Yábir García Benchakhtir (see AUTHORS.md)
-
-This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
-
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License along with this program. If not, see https://www.gnu.org/licenses/.
-
-
-## Some images
-
-![MobileView](/images/mobile.png)
+***Thanks for reading! ⭐ Don't forget to star the [Repository](https://github.com/karishmashuklaa/technet) ⭐***
