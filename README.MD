@@ -1,54 +1,23 @@
-<h1 align="center">Friendssio 💁</h1>
+# Tailwind JIT Starter React
 
-## ℹ️ Description <a name = "about"></a>
+## Setup
 
-Friendssio is an amazing social-network based on twitter! It purpose was do a cool application fastier and simply possible.
-<br>
-<br>
+1. Clone repo
 
-## 📉 Installing
-
-After clone it, just run:
-
-```
-npm install
+```bash
+git clone https://github.com/Puneet56/template-tailwind.git
 ```
 
-<br>
+2. Install Packages
 
-## 🖱️ Usage <a name = "usage"></a>
-
-<br>
-
-Just set you mongoUrl at database.js and run:
-
-```
-node app.js
+```bash
+npm i
 ```
 
-<br>
-<hr>
-<br>
+3. Watch Css and start react server
 
-## 🌠 Preview
+```bash
+npm run dev
+```
 
-
-https://user-images.githubusercontent.com/82950902/135732547-519bd1c3-1432-4db9-ab8d-cefb06d568ad.mp4
-
-<br>
-
-## 📚 Techs
-
--   MongoDB - Mongoose;
--   NodeJS;
--   Bootstrap | Pug | CSS;
--   Jquery;
--   Web Socket;
-
-<br>
-
-### 🍥 Reference
-
-<br>
-
-It was developed at Reece Kenney course!
+I hope it works for you, feel free to star ⭐️ the repo. [Give Me a follow on Github](https://github.com/Puneet56)
