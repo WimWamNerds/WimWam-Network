@@ -1,12 +1,3 @@
-# macOS
-.DS_Store
-
-# IDE
-.vscode/
-.idea/
-
-# Node.js
 node_modules/
-
-# MkDocs
-site/
+.vscode/
+.env
