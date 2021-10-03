@@ -1,15 +1,47 @@
+/.bundle
+
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+/log/*.log
+/tmp
+
+/config/database.yml
+/config/justask.yml
+.sass-cache/
+coverage/
+*.swp
+
+\#*#
+
+# Curse you, JetBrains!
+.idea/
+
+/public/assets
+/public/system
+
+# damn vim backup files
+*~
+
+# dont push generated js translations to repository
+/app/assets/javascripts/i18n/*.js
+/app/javascript/legacy/i18n.js
+
+# every fucking time, dolphin
+.directory
+# lookin' at you, OS trash
+.DS_Store
+Thumbs.DB
+desktop.ini
+
+# ignore exports
+/public/export
+
+/spec/examples.txt
+
+/public/packs
+/public/packs-test
 /node_modules
-/public/hot
-/public/storage
-/storage/*.key
-/vendor
-.env
-.env.backup
-.phpunit.result.cache
-docker-compose.override.yml
-Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
-/.idea
-/.vscode
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity

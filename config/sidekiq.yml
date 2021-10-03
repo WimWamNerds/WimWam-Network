@@ -1,0 +1,15 @@
+---
+:concurrency: 5
+:pidfile: ./tmp/pids/sidekiq.pid
+staging:
+  :concurrency: 10
+production:
+  :concurrency: 25
+:queues:
+  - share
+  - carrierwave
+  - mailers
+  - deletion
+  - question
+  - export
+
