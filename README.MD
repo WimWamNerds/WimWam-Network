@@ -1,136 +1,156 @@
-# Welcome to Spruce
+<h1 align="center">🍿 vue-goodshare</h1>
+<h4 align="center">Vue.js component for share link to social networks and mobile messengers</h4>
 
-![](.gitbook/assets/banner.png)
+<p align="center">
+  <img width="100%" src="https://user-images.githubusercontent.com/11155743/32192540-861b182a-bdc5-11e7-9867-3beca0163512.png" alt="vue-goodshare logo">
+</p>
 
-Spruce is a tiny but powerful open-source social networking platform made with Node.js and MongoDB.
+<p align="center">
+  <img src="https://badge.fury.io/js/vue-goodshare.svg" alt="npm version"/>
+  <img src="https://img.shields.io/badge/Vue.js-2.5.x_or_newer-blue.svg?style=flat" alt="vue.js version"/>
+  <img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat" alt="code style: prettier"/>
+  <img src="https://img.shields.io/badge/license-MIT-yellow.svg?style=flat" alt="license"/>
+  <a href="https://twitter.com/intent/tweet?text=I%20found%20%40vuejs%20component%20for%20%23share%20a%20link%20from%20your%20%23website%20to%20%23social%20networks%20and%20mobile%20%23messengers%20%F0%9F%91%8D&url=https%3A%2F%2Fgithub.com%2Fkoddr%2Fvue-goodshare" target="_blank">
+    <img src="https://img.shields.io/twitter/url/https/github.com/koddr/vue-goodshare.svg" alt="twit link"/>
+  </a>
+</p>
 
-[![Financial Contributors on Open Collective](https://opencollective.com/dan_divy/all/badge.svg?label=financial+contributors)](https://opencollective.com/dan_divy) [![Gitter](https://badges.gitter.im/spruce-social/community.svg)](https://gitter.im/spruce-social/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/fae0af1cd8784133bdb3e86727e3ff2a)](https://www.codacy.com/app/DivySrivastava/spruce?utm_source=github.com&utm_medium=referral&utm_content=DivySrivastava/spruce&utm_campaign=Badge_Grade) ![](https://img.shields.io/badge/license-MIT-green.svg) ![](https://api.travis-ci.org/DivySrivastava/spruce.svg?branch=master) [![Discord](https://img.shields.io/discord/713257349866848327?color=%237289DA&label=discord&logo=discord&logoColor=%23fff)](https://discord.gg/DPRZuB4)
+<p align="center">
+  A simple way to share a link on the pages of your website in the most popular (and not so) social networks.<br/>
+  Powered by <a href="https://github.com/koddr/goodshare.js">goodshare.js</a> project.
+</p>
 
-_Deployed_ [_here_](https://sprucev3.dancodes.online/)
+## The Why?
 
-Get the live MongoDB stats out [here](https://cloud.mongodb.com/freemonitoring/cluster/SQXXT6OAMR757LIEYJRN3WDUCIRAEYYV).
+Vue.js-ready™ component. Simple install, **extensive documentation**, developer support, **SEO friendly**, many options for customization of appearance, **clean code without scripts tracking user activity** on the page, **high speed**.
 
-![](.gitbook/assets/intro.gif)
+Beautiful button design **already included**. Just choose one, add attribute to component and save!
 
-
-
-## Features
-
-- Sign in using local authentication, Instagram or Google.
-- Search for your other users.
-- Chat with your friends in realtime.
-- All feeds divided into 3 categories
-  - thoughts \(tweets\)
-  - events \(location can be specified\)
-  - moments \(personal post\)
-- Like and comment on a feed.
-- API for developers
-- View your/others profile.
-- Follow a particular user and get notified for his/her activities.
-- Change your profile picture, bio, people who follow you etc.
-- Electron app
-
-And a lot more to be added soon...
-
-## To Do's
-
-- Activity feature for user to see follow requests and his/her daily activity.
-- Notifications
-
-## Requirements
-
-- [Node.js](https://nodejs.org)
-  - expressjs [ExpressJS HTTP middleware](https://npmjs.org/package/express)
-  - ejs [Embedded JavaScript templates](https://npmjs.org/package/ejs)
-- [MongoDB](http://mongodb.org)
+## [Docs](https://vue-goodshare.js.org)
 
 ## Installation
 
-Clone the repo locally then install all the dependencies using [NPM](https://npmjs.org/)
-
-```bash
-$ git clone https://github.com/dan-divy/spruce.git
-$ cd spruce
-$ npm i
+```console
+foo@bar:~$ npm install --save vue-goodshare
 ```
 
-## Local Development
+## Usage
 
-Before running, we need to add the Instgram and Google API Credentials to the project. Under the `config` directory of the repo, you will find `instagram.js` and `google.js`. We need to add the `<CLIENT_ID>`, `<CLIENT_SECRET>` and `<host>:<port>` with our own API credentials
+### Single share element
 
-```javascript
-/** REPLACE YOUR API CREDENTIALS HERE **/
-var in_client_id = 'XXXXXXXXXXXXXXXXXX', // <CLIENT_ID>
-    in_client_secret = 'XXXXXXXXXXXXXXXXXXXX', // <CLIENT_SECRET>
+Includes **only needed** social networks or mobile messengers.
+
+```js
+/**
+ * Import Vue.js
+ */
+import Vue from "vue";
+
+/**
+ * Import vue-goodshare single element
+ */
+import VueGoodshareFacebook from "vue-goodshare/src/providers/Facebook.vue";
+
+const app = new Vue({
+  el: "#app",
+  components: {
+    VueGoodshareFacebook
+  }
+});
 ```
 
-Now Replace the `<host>` & `<port>` with the redirect uri specified in the [Instagram API Dashboard](https://www.instagram.com/developer) and [Google API Dashboard](https://developers.google.com). Default is `http://localhost:80/account/oauth`.
+Add component to HTML template (with attributes):
 
-```javascript
-var in_redirect_uri = "http://localhost:80/account/oauth/:service";
+```html
+<div id="app">
+  <vue-goodshare-facebook
+    page_url="https://github.com/koddr/vue-goodshare"
+    title_social="Facebook"
+    has_counter
+    has_icon
+  ></vue-goodshare-facebook>
+</div>
 ```
 
-Finally start the MongoDB server in a seperate bash/pm2
+Result:
 
-```bash
-$ mongod
+<img width="160" alt="screen shot" src="https://user-images.githubusercontent.com/11155743/32197328-d67af4f2-bdd4-11e7-8323-96d0d1376c5d.png">
+
+### Bundle of share elements
+
+> Facebook, Twitter, LinkedIn, Google Plus, Tumblr, Pinterest, Reddit
+
+```js
+/**
+ * Import Vue.js
+ */
+import Vue from "vue";
+
+/**
+ * Import vue-goodshare bundle
+ */
+import VueGoodshare from "vue-goodshare";
+
+const app = new Vue({
+  el: "#app",
+  components: {
+    VueGoodshare
+  }
+});
 ```
 
-and then start the spruce server via `npm`.
+Add components to HTML template (without attributes):
 
-```bash
-$ npm start
+```html
+<div id="app">
+  <vue-goodshare></vue-goodshare>
+</div>
 ```
 
-## To know
+Result:
 
-spruce uses [mongoose](https://npmjs.org/package/mongoose) as an ORM for performing CRUD operations on MongoDB and [express.js](https://npmjs.com/package/express) for server-side HTTP routing.
+<img width="100%" alt="screen shot" src="https://user-images.githubusercontent.com/11155743/32456641-62592450-c337-11e7-8f75-61919301d6de.jpg">
 
-**This project needs contributors!!**
+## Demo on `localhost`
 
-## Authors
+```console
+foo@bar:~$ git clone https://github.com/koddr/vue-goodshare.git
+foo@bar:~$ cd vue-goodshare/examples
+```
 
-- [Divy Srivastava](http://github.com/DivySrivastava)
-- [Dan](https://github.com/dan-online)
+Start simple Python 3.4+ HTTP server (only macOS and Linux):
 
-## Contributors
+```console
+foo@bar:~$ python3 -m http.server 4000 --bind localhost
+```
 
-### Code Contributors
+## Developers
 
-This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
-<a href="https://github.com/dan-divy/spruce/graphs/contributors"><img src="https://opencollective.com/dan_divy/contributors.svg?width=890&button=false" /></a>
+- Idea and active development by [Vic Shóstak](https://github.com/koddr) (aka Koddr).
 
-### Financial Contributors
+## Project assistance
 
-Become a financial contributor and help us sustain our community. [[Contribute](https://opencollective.com/dan_divy/contribute)]
+If you want to say «thank you» or/and support active development `vue-goodshare`:
 
-#### Individuals
+1. Add a GitHub Star to project.
+2. Twit about project [on your Twitter](https://twitter.com/intent/tweet?text=I%20found%20%40vuejs%20component%20for%20%23share%20a%20link%20from%20your%20%23website%20to%20%23social%20networks%20and%20mobile%20%23messengers%20%F0%9F%91%8D&url=https%3A%2F%2Fgithub.com%2Fkoddr%2Fvue-goodshare).
+3. Donate some money to project author via PayPal: [@paypal.me/koddr](https://paypal.me/koddr?locale.x=en_EN).
+4. Join DigitalOcean at our [referral link](https://m.do.co/c/b41859fa9b6e) (your profit is **$100** and we get $25).
 
-<a href="https://opencollective.com/dan_divy"><img src="https://opencollective.com/dan_divy/individuals.svg?width=890"></a>
+Thanks for your support! 😘 Together, we make this project better every day.
 
-#### Organizations
+[![DigitalOcean Referral Badge](https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%202.svg)](https://www.digitalocean.com/?refcode=b41859fa9b6e&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
 
-Support this project with your organization. Your logo will show up here with a link to your website. [[Contribute](https://opencollective.com/dan_divy/contribute)]
+### Stargazers over time
 
-<a href="https://opencollective.com/dan_divy/organization/0/website"><img src="https://opencollective.com/dan_divy/organization/0/avatar.svg"></a>
-<a href="https://opencollective.com/dan_divy/organization/1/website"><img src="https://opencollective.com/dan_divy/organization/1/avatar.svg"></a>
-<a href="https://opencollective.com/dan_divy/organization/2/website"><img src="https://opencollective.com/dan_divy/organization/2/avatar.svg"></a>
-<a href="https://opencollective.com/dan_divy/organization/3/website"><img src="https://opencollective.com/dan_divy/organization/3/avatar.svg"></a>
-<a href="https://opencollective.com/dan_divy/organization/4/website"><img src="https://opencollective.com/dan_divy/organization/4/avatar.svg"></a>
-<a href="https://opencollective.com/dan_divy/organization/5/website"><img src="https://opencollective.com/dan_divy/organization/5/avatar.svg"></a>
-<a href="https://opencollective.com/dan_divy/organization/6/website"><img src="https://opencollective.com/dan_divy/organization/6/avatar.svg"></a>
-<a href="https://opencollective.com/dan_divy/organization/7/website"><img src="https://opencollective.com/dan_divy/organization/7/avatar.svg"></a>
-<a href="https://opencollective.com/dan_divy/organization/8/website"><img src="https://opencollective.com/dan_divy/organization/8/avatar.svg"></a>
-<a href="https://opencollective.com/dan_divy/organization/9/website"><img src="https://opencollective.com/dan_divy/organization/9/avatar.svg"></a>
+[![Stargazers over time](https://starchart.cc/koddr/vue-goodshare.svg)](https://starchart.cc/koddr/vue-goodshare)
+
+## Code Contributors
+
+This project exists thanks to all the people who contribute.
+
+<a href="https://github.com/koddr/vue-goodshare/graphs/contributors"><img src="https://opencollective.com/vue-goodshare/contributors.svg?width=890&button=false" /></a>
 
 ## License
 
-\(The MIT License\)
-
-Copyright \(c\) 2019 Divy Srivastava [dj.srivastava23@gmail.com](mailto:dj.srivastava23@gmail.com)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files \(the 'Software'\), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+MIT
