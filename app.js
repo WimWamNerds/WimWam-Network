@@ -1,143 +1,83 @@
-const createError = require("http-errors");
-const express = require("express");
-const rateLimit = require("express-rate-limit");
-const helmet = require("helmet");
-const socket_io = require("socket.io");
-const jwt = require("jsonwebtoken");
-const path = require("path");
-const logger = require("morgan");
-const mongoose = require("mongoose");
-const fs = require("fs");
-require("dotenv").config({ path: "variables.env" });
+var createError = require("http-errors");
+var express = require("express");
+var path = require("path");
+var session = require("express-session");
+var bodyParser = require("body-parser");
+var cookieParser = require("cookie-parser");
+var logger = require("morgan");
+var fs = require("file-system");
 
-// connect to DB
-mongoose.connect(process.env.DATABASE, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+var indexRouter = require("./routes/index");
+var usersRouter = require("./routes/users");
+var accountRouter = require("./routes/auth");
+var meRouter = require("./routes/settings");
+var extraRouter = require("./routes/extras/wordbeater/main");
+var categoryRouter = require("./routes/category");
+var restApi = require("./routes/api/v1/index");
+var publicApiRouter = require("./routes/developer/api");
+var chatRouter = require("./routes/chat");
+var counterRouter = require("./utils/handlers/counter");
 
-mongoose.Promise = global.Promise; // Tell Mongoose to use ES6 promises
-mongoose.connection.on("error", (err) => {
-  console.error(err.message);
-});
+var app = express();
 
-mongoose.set("useFindAndModify", false);
-mongoose.set("useCreateIndex", true);
-mongoose.set("autoIndex", false);
+app.conf = require("./config/app");
 
-require("./models/Post");
-require("./models/User");
-require("./models/Comment");
-require("./models/CommentReply");
-require("./models/CommentReplyLike");
-require("./models/CommentLike");
-require("./models/PostLike");
-require("./models/Following");
-require("./models/Followers");
-require("./models/Notification");
-require("./models/ChatRoom");
-require("./models/Message");
+// view engine setup
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
 
-const app = express();
-const io = socket_io();
+var cooky = {
+  secret: "work hard",
+  resave: true,
+  expires: new Date() * 60 * 60 * 24 * 7,
+  saveUninitialized: true
+};
 
-const userController = require("./controllers/userController");
+app.sessionMiddleware = session(cooky);
 
-app.io = io;
+app.set("trust proxy", 1); // trust first proxy
+app.use(app.sessionMiddleware);
+app.use(
+  logger("common", {
+    stream: fs.createWriteStream(
+      __dirname.endsWith(".spruce")
+        ? __dirname + "/../data/out.log"
+        : __dirname + "/out.log",
+      { flags: "a" }
+    )
+  })
+);
+app.use(logger("tiny"));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, "public")));
+app.use(counterRouter);
 
-app.set("socketio", io);
-
-io.use((socket, next) => {
-  if (socket.handshake.query && socket.handshake.query.token) {
-    const token = socket.handshake.query.token.split(" ")[1];
-    jwt.verify(token, process.env.JWT_KEY, (err, decoded) => {
-      if (err) return next(new Error("Authentication error"));
-      socket.userData = decoded;
-      next();
-    });
-  } else {
-    next(new Error("Authentication error"));
-  }
-}).on("connection", (socket) => {
-  // Connection now authenticated to receive further events
-  socket.join(socket.userData.userId);
-  io.in(socket.userData.userId).clients((err, clients) => {
-    userController.changeStatus(socket.userData.userId, clients, io);
-    //console.log(clients);
-  });
-  socket.on("typing", (data) => {
-    socket.to(data.userId).emit("typing", { roomId: data.roomId });
-  });
-  socket.on("stoppedTyping", (data) => {
-    socket.to(data.userId).emit("stoppedTyping", { roomId: data.roomId });
-  });
-  socket.on("disconnect", () => {
-    socket.leave(socket.userData.userId);
-    io.in(socket.userData.userId).clients((err, clients) => {
-      userController.changeStatus(socket.userData.userId, clients, io);
-      //console.log(clients);
-    });
-  });
-});
-
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 200, // limit each IP to 200 requests per windowMs
-});
-
-const postsRouter = require("./routes/post");
-const usersRouter = require("./routes/user");
-const commentsRouter = require("./routes/comment");
-const notificationRouter = require("./routes/notification");
-const chatRouter = require("./routes/chat");
-
-app.use(helmet());
-if (process.env.NODE_ENV === "production") {
-  app.use(limiter);
-  app.use(
-    logger("common", {
-      stream: fs.createWriteStream("./access.log", { flags: "a" }),
-    })
-  );
-} else {
-  app.use(logger("dev"));
-}
-app.use(express.static("public"));
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "public", "index.html"));
-});
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-
-app.use("/api/post/", postsRouter);
-app.use("/api/user/", usersRouter);
-app.use("/api/comment/", commentsRouter);
-app.use("/api/notification/", notificationRouter);
-app.use("/api/chat/", chatRouter);
-
-app.get("/auth/reset/password/:jwt", function (req, res) {
-  return res.status(404).json({ message: "go to port 3000" });
-});
+app.use("/", indexRouter);
+app.use("/u", usersRouter);
+app.use("/account", accountRouter);
+app.use("/me", meRouter);
+app.use("/api", restApi);
+app.use("/category", categoryRouter);
+app.use("/products", extraRouter);
+app.use("/chat", chatRouter);
+app.use("/developer", publicApiRouter);
 
 // catch 404 and forward to error handler
-app.use((req, res, next) => {
+app.use(function(req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use((err, req, res, next) => {
+app.use(function(err, req, res, next) {
   // set locals, only providing error in development
-  // res.locals.message = err.message;
-  // res.locals.error = process.env.NODE_ENV === "development" ? err : {};
-  console.log(err);
+  res.locals.message = err.message;
+  res.locals.error = req.app.get("env") === "development" ? err : {};
 
   // render the error page
   res.status(err.status || 500);
-  res.json({
-    error: {
-      message: err.message,
-    },
-  });
+  res.render("error");
 });
 
 module.exports = app;
