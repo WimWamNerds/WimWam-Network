@@ -1,0 +1,66 @@
+doctype html
+html(lang="ja")
+    head
+        meta(charset="UTF-8")
+        meta(name="robots",content="noindex")
+        title 雑談スレ★n
+    body(style="background-color: #efefef")
+        span#links
+            a(href="/") Sea
+            | &nbsp;
+            a(href="/applications") 専ブラ一覧
+            | &nbsp;
+            a(href="/posts/1-") 1-
+            | &nbsp;
+            a(href="/posts/l50") 最新50
+        span#ad(style="float: right;")
+            | [PR]
+            a(href="https://github.com/rinsuki/sea") 今すぐ開発に参加!
+            | [PR]
+        hr
+        h1#title(style="color: red; font-size: larger; font-weight: normal;") 雑談スレ★n
+        dl#thread
+            each post in posts
+                dt(id="posts_" + post.id)
+                    span #{post.id} ：
+                    span(style="color: green")
+                        b #{post.user.name}
+                    span &nbsp;：#{post.createdAtString}
+                    | &nbsp;ID: #{post.user.screenName}
+                    each reply in post.replies
+                        if reply.isFoundInPosts
+                            small
+                                = " "
+                                a(href="#posts_" + reply.id) &gt;&gt;#{reply.id}
+                        else
+                            small
+                                = " "
+                                a(href="/posts/" + reply.id) &gt;&gt;#{reply.id}
+                dd
+                    if post.inReplyToId != null
+                        a(href="/posts/"+post.inReplyToId) &gt;&gt;#{post.inReplyToId}
+                        br
+                    each line in post.text.split("\n")
+                        | #{line}
+                        br
+                    br
+                    if post.files.length
+                        each file in post.files
+                            if file.variants.length == 0
+                                p deleted 😢
+                            else
+                                a(href=file.variants.filter(v => v.mime !== "image/webp" && v.type !== "thumbnail")[0].url)
+                                    img(src=file.variants.filter(v => v.mime !== "image/webp" && v.type === "thumbnail")[0].url, style={float: "left", height: "3.5em", "margin-right": "0.5em"})
+                                    div= file.name
+                                div #{file.type} | #{file.variants.filter(v => v.mime !== "image/webp" && v.type !== "thumbnail")[0].size} bytes
+                        br
+        hr
+        center: a(href="/posts/"+lastPost.id+"-") 新着レスの表示
+        hr
+        a(href="/posts/1-") 1-
+        | &nbsp;
+        a(href="/posts/" + Math.max(posts[0].id - 100, 1) + "-" + posts[0].id) 前100
+        | &nbsp;
+        a(href="/posts/" + lastPost.id + "-" + (lastPost.id + 100)) 次100
+        | &nbsp;
+        a(href="/posts/l50") 最新50

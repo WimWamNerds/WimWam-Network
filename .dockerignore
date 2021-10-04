@@ -1,0 +1,15 @@
+/*
+
+!/src
+!/tests
+!/views
+!/ormconfig.js
+
+!/package.json
+!/yarn.lock
+
+!/jest.config.js
+!/tsconfig.json
+!/.prettierrc
+
+!/LICENSE
