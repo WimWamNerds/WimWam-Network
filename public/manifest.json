@@ -1,0 +1,10 @@
+{
+    "name": "WorkGroup",
+    "short_name": "WorkGroup",
+    "theme_color": "#2c86d0",
+    "background_color": "#2c86d0",
+    "display": "standalone",
+    "orientation": "portrait",
+    "scope": "/",
+    "start_url": "/"
+}

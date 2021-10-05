@@ -1,15 +1,44 @@
+## Pull request checklist
 
-## Here's what I fixed or added:
+Please check if your PR fulfills the following requirements:
 
-## Here's why I did it:
+-   [ ] Prettier (`npm run prettier`) has passed locally and any fixes were made for failures
+-   [ ] Test (`npm run test`) has passed locally
 
-## Checklist: (`[x]` to check/tick the boxes)
+## Pull request type
 
-- [ ] This pull request addresses a single issue
-- [ ] If this code includes interface changes, I've included screenshots in this Pull Request thread
-- [ ] I've adhered to [Known's style guide](http://docs.withknown.com/en/latest/developers/standards/) ([these codesniffer rules](http://docs.withknown.com/en/latest/developers/testing/#code-style-testing) might help!)
-- [ ] My git branch is named in a descriptive way - i.e., yourname-summary-of-issue
-- [ ] I've tested my code in-browser
-- [ ] My code contains descriptive comments
-- [ ] I've added tests where applicable, and...
-- [ ] I can run the [unit tests](http://docs.withknown.com/en/latest/developers/testing/#unit-testing) successfully.
+Please check the type of change your PR introduces:
+
+-   [ ] Bugfix
+-   [ ] Feature
+-   [ ] Style changes
+-   [ ] Code style update (formatting, renaming)
+-   [ ] Refactoring (no functional changes, no api changes)
+-   [ ] Build related changes
+-   [ ] Documentation content changes
+-   [ ] Other (please describe):
+
+## What is the current behavior?
+
+<!-- Please describe the current behavior that you are modifying, or link to a relevant issue. -->
+
+Issue Number: N/A
+
+## What is the new behavior?
+
+<!-- Please describe the behavior or changes that are being added by this PR. -->
+
+-
+-
+-
+
+## Does this introduce a breaking change?
+
+-   [ ] Yes
+-   [ ] No
+
+<!-- If this introduces a breaking change, please describe the impact and migration path for existing applications below. -->
+
+## Other information
+
+<!-- Any other information that is important to this PR such as screenshots of how the component looks before and after the change. -->

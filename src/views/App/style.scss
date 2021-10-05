@@ -1,0 +1,31 @@
+@import '../../scss/variables';
+body {
+    overflow: hidden;
+}
+
+.app {
+    padding: 0;
+    background: #f0f5f7;
+    overflow: auto !important;
+}
+.main_content {
+    padding: 0 calc((100% - 1200px) / 2);
+}
+
+@media (max-width: 1300px) {
+    .main_content {
+        padding: 0;
+    }
+}
+
+div#root div[location] {
+    height: 100%;
+}
+
+body ::-webkit-scrollbar {
+    width: 7px !important;
+}
+
+body ::-webkit-scrollbar-thumb {
+    background: $primary-color !important;
+}

@@ -1,135 +1,160 @@
-[![Build Status](https://travis-ci.org/idno/known.svg?branch=master)](https://travis-ci.org/idno/known) 
-[![Backers on Open Collective](https://opencollective.com/known/backers/badge.svg)](#backers) 
-[![Sponsors on Open Collective](https://opencollective.com/known/sponsors/badge.svg)](#sponsors) 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a937cf4714ed4a2090118bc0805d9503)](https://app.codacy.com/gh/BerkeAras/WorkGroup?utm_source=github.com&utm_medium=referral&utm_content=BerkeAras/WorkGroup&utm_campaign=Badge_Grade_Settings)
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/BerkeAras/WorkGroup/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/release/Naereen/StrapDown.js.svg)](https://github.com/BerkeAras/WorkGroup/releases/)
+[![Github all releases](https://img.shields.io/github/downloads/Naereen/StrapDown.js/total.svg)](https://github.com/BerkeAras/WorkGroup/releases/)
+![Profile views](https://gpvc.arturio.dev/BerkeAras)
+[![GitHub contributors](https://img.shields.io/github/contributors/Naereen/StrapDown.js.svg)](https://GitHub.com/BerkeAras/WorkGroup/graphs/contributors/)
 
-# Known: a social group platform
+<!-- PROJECT LOGO -->
 
-![Known - A social group platform](https://withknown.com/img/home/screens.png)
+<br /><br />
 
-## Installation 
+<p align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="https://raw.githubusercontent.com/BerkeAras/WorkGroup/main/src/static/logo.svg" alt="Logo" height="50">
+  </a>
 
-### One-click Known sites
+  <h3 align="center">WorkGroup</h3>
 
-If you want to install on your own web space, we recommend [Reclaim Hosting](https://portal.reclaimhosting.com/aff.php?aff=013),
-which includes one-click Known installation. Known is also known to work on [DreamHost](https://dreamhost.com), a high-quality
-web hosting provider.
+  <h4 align="center">⚠️ Warning: WorkGroup is currently in development. Most of the features are not working properly.<br><b>I am very happy about every contributor 😁</b> ⚠️</h4><br>
 
-### Installing
+  <p align="center">
+    Self-Hosted private Social Media for Companies
+    <br />
+    <a href="https://workgroup.berkearas.de/" target="_blank"><strong><i>(comming soon)</i> Learn more »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/BerkeAras/WorkGroup/issues/new?assignees=&labels=bug&template=bug_report.md&title=%5BBUG%5D%3A+">Report Bug</a>
+    ·
+    <a href="https://github.com/BerkeAras/WorkGroup/issues/new?assignees=&labels=feature+request&template=feature_request.md&title=%5BFEAT%5D%3A+">Request Feature</a>
+  </p>
+</p>
 
-Known is under active development and requires PHP 7.3+ with selected extensions, together with a supported database backend. You can find detailed installation instructions here: <http://docs.withknown.com/en/latest/install/index.html>
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#try-the-demo">Try the Demo!</a></li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-#### Installing from packages
+<!-- ABOUT THE PROJECT -->
 
-_Unofficial_ install packages, which are periodically built from the latest code, are available: <https://www.marcus-povey.co.uk/known/>
+## About The Project
 
-#### Installing from Github
+<img src=".github/screenshot_1.png" style="width:100%;background:lightgrey;height:250px;object-fit:contain;">
+<img src=".github/screenshot_2.png" style="width:100%;background:lightgrey;height:250px;object-fit:contain;">
 
-You can opt to check out the work-in-progress development code from the git repository: <https://github.com/idno/known>
+WorkGroup is an open source, selfhosted private social-media platform for companies.
 
-* Check out the repo: ```git clone https://github.com/idno/known.git```
-* Fetch dependencies: ```cd known; composer install```
+Here's why:
 
-#### Installing with composer
+-   Good networking is very important in companies.
+-   Self hosted platforms are very important for companies with critical information.
 
-You can install Known directly from composer using: ``` composer create-project idno/known ```
+Features:
 
-Optionally, you can install the latest bleeding edge code the same way: ``` composer create-project idno/known -s dev ```
+-   Communicate through your company!
+    -   Videocalls
+    -   Voicecalls
+    -   Textchat
+    -   Groupchats
+-   Socialize with your coworkers!
+    -   Use the company-wide feed to share informations across the whole company
+    -   Create group-feeds for different departments
+    -   Create polls, upload photos, videos and other files
+    -   Create events and notify users
 
-### Support us
+### Built With
 
-**If you find this project useful, and you really want to support us, you can now fund us on [OpenCollective](https://opencollective.com/known).**
+-   [React](https://reactjs.org/)
+-   [Semantic UI](https://semantic-ui.com/)
 
-* [Star us on GitHub](https://github.com/idno/known)
-* [Like us on alternativeto.net](http://alternativeto.net/software/known/)
-* [Contribute](CONTRIBUTING.md)
+<!-- Try the Demo -->
 
-### Get support
+## Try the Demo
 
-* Try the open source mailing list: <https://groups.google.com/forum/#!forum/known-dev>
+Sign Up at [demo1.workgroup.berkearas.de](https://demo1.workgroup.berkearas.de/)
 
-## Community links
+<!-- GETTING STARTED -->
 
-* Learn more and sign up to get updates: <https://withknown.com>
-* Full project documentation: <http://docs.withknown.com/>
-* Join the development mailing list: <https://groups.google.com/forum/#!forum/known-dev>
-* Join the IRC channel: [#knownchat](https://webchat.freenode.net/?channels=knownchat) on Freenode
+## Getting Started
 
-For details on contributing to the Known project, please read [CONTRIBUTING.md](CONTRIBUTING.md).
+To get a local copy up and running follow these simple steps.
 
-## Contributors
+### Prerequisites
 
-This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
-<a href="https://github.com/idno/known/graphs/contributors"><img src="https://opencollective.com/known/contributors.svg?width=890&button=false" /></a>
+This is an example of how to list things you need to use the software and how to install them.
 
+-   npm
+    ```sh
+    npm install npm@latest -g
+    ```
 
-## Backers
+### Installation
 
-Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/known#backer)]
+1. Clone the repo
+    ```sh
+    git clone https://github.com/BerkeAras/WorkGroup.git
+    ```
+2. Install NPM packages
+    ```sh
+    npm install
+    ```
+3. Enter your configuration in `.env` (Clone the API from [WorkGroup-API](https://github.com/BerkeAras/WorkGroup-API))
+    ```JS
+    REACT_APP_API_URL=http://your-api-url.com
+    REACT_APP_LOCALE="en-US"
+    REACT_APP_USE_GOOGLE_ANALYTICS=true
+    REACT_APP_GOOGLE_ANALYTICS="UA-XXXXXXXXX-X"
+    ```
 
-<a href="https://opencollective.com/known#backers" target="_blank"><img src="https://opencollective.com/known/backers.svg?width=890"></a>
+<!-- ROADMAP -->
 
+## Roadmap
 
-## Sponsors
+See the [open issues](https://github.com/BerkeAras/WorkGroup/issues) for a list of proposed features (and known issues).
 
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/known#sponsor)]
+<!-- CONTRIBUTING -->
 
-<a href="https://opencollective.com/known/sponsor/0/website" target="_blank"><img src="https://opencollective.com/known/sponsor/0/avatar.svg"></a>
-<a href="https://opencollective.com/known/sponsor/1/website" target="_blank"><img src="https://opencollective.com/known/sponsor/1/avatar.svg"></a>
-<a href="https://opencollective.com/known/sponsor/2/website" target="_blank"><img src="https://opencollective.com/known/sponsor/2/avatar.svg"></a>
-<a href="https://opencollective.com/known/sponsor/3/website" target="_blank"><img src="https://opencollective.com/known/sponsor/3/avatar.svg"></a>
-<a href="https://opencollective.com/known/sponsor/4/website" target="_blank"><img src="https://opencollective.com/known/sponsor/4/avatar.svg"></a>
-<a href="https://opencollective.com/known/sponsor/5/website" target="_blank"><img src="https://opencollective.com/known/sponsor/5/avatar.svg"></a>
-<a href="https://opencollective.com/known/sponsor/6/website" target="_blank"><img src="https://opencollective.com/known/sponsor/6/avatar.svg"></a>
-<a href="https://opencollective.com/known/sponsor/7/website" target="_blank"><img src="https://opencollective.com/known/sponsor/7/avatar.svg"></a>
-<a href="https://opencollective.com/known/sponsor/8/website" target="_blank"><img src="https://opencollective.com/known/sponsor/8/avatar.svg"></a>
-<a href="https://opencollective.com/known/sponsor/9/website" target="_blank"><img src="https://opencollective.com/known/sponsor/9/avatar.svg"></a>
+## Contributing
 
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## Copyright and License
+<!-- LICENSE -->
 
-Except for included third-party projects, Known is (c) Known, Inc.
+## License
 
-Unless otherwise stated, Known is licensed under the Apache Software License 2.0. See [LICENSE](LICENSE) for more information.
+Distributed under the MIT License. See `LICENSE` for more information.
 
-Known logos are (c) Known, Inc. Permission from Known, Inc is required to use the Known name or logo as part of any
-project, product, service, domain or company name, except as included in official themes distributed by Known.
+<!-- CONTACT -->
 
-Logos of external services are (c) their respective owners. All rights reserved.
+## Contact
 
-Third party libraries are licensed separately.
+Berke Aras - [@brk_ars](http://instagram.com/brk_ars) - hello@berkearas.de
 
-### Known also contains
-
-* Twitter Bootstrap, which is distributed under the Apache 2.0 license. Source: https://github.com/twitter/bootstrap
-* jQuery, which is distributed under the MIT License. Source: https://github.com/jquery/jquery
-* Portions of Symfony, which is distributed under the MIT license.
-  * EventDispatcher. Source: https://github.com/symfony/EventDispatcher
-  * HttpFoundation. Source: https://github.com/symfony/HttpFoundation
-  * Console. Source: https://github.com/symfony/console
-* ToroPHP, which is distributed under the MIT License. Source: https://github.com/anandkunal/ToroPHP/
-* Fork Awesome, which is distributed under the Open Font License, version 1.1: https://github.com/ForkAwesome/Fork-Awesome
-* Steve Clay's AutoP, which is distributed under the MIT License. Source: https://code.google.com/p/mrclay/
-* Aaron Parecki's Webmention Client, which is distributed under the Apache 2.0 license. Source: https://github.com/aaronpk/mention-client
-* Barnaby Walters's Microformats 2 Parser, which is distributed under the MIT License. Source: https://github.com/indieweb/php-mf2
-* FitVids.js, which is distributed under the WTFPL License. Source: http://fitvidsjs.com/
-* Leaflet.js, which is distributed under the BSD 2-Clause License. Source: http://leafletjs.com/ 
-* SwiftMailer, which is distributed under the MIT License. Source: https://github.com/swiftmailer/swiftmailer
-* Antwort, an email template which is distributed under the MIT License. Source: https://github.com/internations/antwort
-* Mention.js, a Bootstrap user at-mention library, which is distributed under the MIT License. Source: https://github.com/jakiestfu/Mention.js
-* MediaElement.js, a cross-browser media player, which is distributed under the MIT License. Source: https://github.com/johndyer/mediaelement
-* Simplepie, a feed parser, which is distributed under the BSD 3-Clause License. Source: https://github.com/simplepie/simplepie/
-* Bootstrap Toggle, which is distributed under the MIT License. Source: http://www.bootstraptoggle.com/
-* TinyMCE, a rich text editor, which is distributed under the LGPL License. Source: https://github.com/tinymce/tinymce
-* The Paypal Bootstrap Accessibility Plugin, which is distributed under the BSD 3-Clause License. Source: https://github.com/paypal/bootstrap-accessibility-plugin
-* HTMLPurifier, which is distributed under the LGPL License. Source: http://htmlpurifier.org
-* Wavesurfer, which is distrubuted under a Creative Commons Attribution 3.0 Unported License. Source: https://github.com/katspaugh/wavesurfer.js
-* MongoDB-PHP-Library, which is distributed under the Apache 2 Licence. Source: https://github.com/mongodb/mongo-php-library
-* Exif-js, which is distributed under the MIT Licence. Source: https://github.com/exif-js/exif-js
-* PHP-OGP, distributed under the GPL2 Licence. Source: https://github.com/mapkyca/php-ogp
-
-## Thank you
-
-[<img src="https://user-images.githubusercontent.com/624104/52508260-d0daa180-2ba8-11e9-970c-3ef9596f6b4e.png" alt="BrowserStack Logo" width="120">](https://www.browserstack.com/)
-
-Thanks to [BrowserStack](https://www.browserstack.com/) for providing the infrastructure that allows us to test in real browsers.
+Project Link: [https://github.com/BerkeAras/WorkGroup](https://github.com/BerkeAras/WorkGroup)

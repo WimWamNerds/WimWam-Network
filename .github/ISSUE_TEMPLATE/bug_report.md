@@ -1,19 +1,23 @@
 ---
-name: Bug report
-about: Something not working? Let us know to help us improve.
-
+name: 🐜 Bug report
+about: If something is not working as excepted
+title: '[BUG]: '
+labels: 'bug'
 ---
 
-## While trying to do this:
+## Expected Behavior
 
-## I encountered this error:
+## Actual Behavior
 
-## Some other notes:
+## Steps to Reproduce the Problem
 
-Give us some context: 
+1.
+2.
+3.
 
-* It'd also be really handy if you could tell us the contents of your ```version.known``` file
-* What database are you using? (e.g. mongo, mysql, postgres)
-* Any warnings or errors in your admin/diagnostics page?
-* If this is a programming bug, can you include examples of any Micropub / API calls / webhook pings you make? Otherwise please don't worry about what this means!
-* Bonus points - are you able to illustrate the issue with a unit test? If so, submit it as a pull request!
+## Critical Bug?
+
+-   [ ] Yes
+-   [ ] No
+
+## More Information

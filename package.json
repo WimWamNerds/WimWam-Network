@@ -1,39 +1,68 @@
 {
-    "name": "Known",
-    "version": "1.3.1",
-    "devDependencies": {
-        "@babel/cli": "^7.14.8",
-        "@babel/core": "^7.15.0",
-        "@babel/preset-env": "^7.15.0",
-        "dart-sass": "^1.25.0",
-        "grunt": "^1.4.1",
-        "grunt-babel": "^8.0.0",
-        "grunt-cli": "^1.4.3",
-        "grunt-contrib-concat": "^1.0.1",
-        "grunt-contrib-csslint": "^2.0.0",
-        "grunt-contrib-jshint": "^3.0.0",
-        "grunt-contrib-watch": "^1.1.0",
-        "grunt-modernizr": "^3.0.2",
-        "grunt-sass": "^3.1.0",
-        "grunt-stylelint": "^0.16.0",
-        "grunt-terser": "^2.0.0",
-        "modernizr": "^3.11.8",
-        "stylelint": "^13.13.1",
-        "stylelint-config-sass-guidelines": "^8.0.0",
-        "terser": "5.7.2"
-    },
+    "name": "workgroup",
+    "version": "0.2.0",
+    "private": true,
     "dependencies": {
-        "clean-css-cli": "^5.3.3",
-        "core-js": "^3.16.4",
-        "opencollective": "^1.0.3",
-        "opencollective-postinstall": "^2.0.3"
-    },
-    "collective": {
-        "type": "opencollective",
-        "url": "https://opencollective.com/known"
+        "@fortawesome/fontawesome-svg-core": "^1.2.34",
+        "@fortawesome/free-solid-svg-icons": "^5.15.2",
+        "@fortawesome/react-fontawesome": "^0.1.14",
+        "@reach/router": "^1.3.4",
+        "@testing-library/jest-dom": "^5.11.6",
+        "@testing-library/react": "^11.2.2",
+        "@testing-library/user-event": "^12.6.0",
+        "autolinker": "^3.14.2",
+        "axios": "^0.21.1",
+        "dotenv": "^10.0.0",
+        "firebase": "^8.2.0",
+        "focus-trap-react": "^8.5.0",
+        "linkifyjs": "^2.1.9",
+        "react": "^17.0.1",
+        "react-debounce-input": "^3.2.3",
+        "react-dom": "^17.0.1",
+        "react-feather": "^2.0.9",
+        "react-ga": "^3.3.0",
+        "react-infinite-scroll-component": "^6.0.0",
+        "react-ionicons": "^4.0.5",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "4.0.1",
+        "react-virtual-scrolling": "^1.1.4",
+        "sass": "^1.30.0",
+        "semantic-ui-css": "^2.4.1",
+        "semantic-ui-react": "^2.0.1",
+        "styled-components": "^5.2.1",
+        "web-vitals": "^0.2.4"
     },
     "scripts": {
-        "postinstall": "opencollective-postinstall",
-        "grunt": "grunt"
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "npm run lint",
+        "eject": "react-scripts eject",
+        "prettier": "prettier --write .",
+        "lint": "eslint --fix --ext .js,.jsx ."
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^4.10.0",
+        "@typescript-eslint/parser": "^4.10.0",
+        "babel-eslint": "^10.1.0",
+        "eslint": "^7.16.0",
+        "eslint-config-airbnb": "^18.2.1",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-jsx-a11y": "^6.4.1",
+        "eslint-plugin-react": "^7.21.5",
+        "eslint-plugin-react-hooks": "^4.2.0",
+        "prettier": "2.2.1",
+        "react-app-env": "^1.2.3"
     }
 }
